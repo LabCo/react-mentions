@@ -33,6 +33,7 @@ Mention.propTypes = {
   ]),
   markup: PropTypes.string,
   displayTransform: PropTypes.func,
+  displayClassNameTransform: PropTypes.func,
   /**
    * If set to `true` spaces will not interrupt matching suggestions
    */
@@ -44,9 +45,8 @@ Mention.propTypes = {
 Mention.defaultProps = {
   trigger: '@',
   markup: '@[__display__](__id__)',
-  displayTransform: function(id, display) {
-    return display || id
-  },
+  displayTransform: (id, display) => display || id,
+  displayClassNameTransform: () => null;
   onAdd: () => null,
   onRemove: () => null,
   renderSuggestion: null,

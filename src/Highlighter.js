@@ -181,8 +181,14 @@ class Highlighter extends Component {
   // Returns a clone of the Mention child applicable for the specified type to be rendered inside the highlighter
   getMentionComponentForMatch(id, display, mentionChildIndex, key) {
     const props = { id, display, key }
-    const child = Children.toArray(this.props.children)[mentionChildIndex]
-    return React.cloneElement(child, props)
+    const child = Children.toArray(this.props.children)[mentionChildIndex];
+    const displayClassNameTransform = child && child.props && child.props.displayClassNameTransform;
+    if(displayClassNameTransform) {
+      const className = displayClassNameTransform(id, display);
+      return React.cloneElement(child, { ...props, className })
+    } else {
+      return React.cloneElement(child, props)
+    }
   }
 
   // Renders an component to be inserted in the highlighter at the current caret position
