@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "react-mentions",
+  "name": "lab-react-mentions",
   "regions": ["cdg1"],
   "builds": [
     {

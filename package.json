@@ -1,9 +1,9 @@
 {
   "name": "lab-react-mentions",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "React mentions input",
-  "main": "dist/react-mentions.cjs.js",
-  "module": "dist/react-mentions.esm.js",
+  "main": "dist/lab-react-mentions.cjs.js",
+  "module": "dist/lab-react-mentions.esm.js",
   "files": [
     "dist"
   ],
